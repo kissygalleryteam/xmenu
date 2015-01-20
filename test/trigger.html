@@ -1,0 +1,251 @@
+<!doctype html>
+<html>
+<head>
+	<title>km-xmenu demo</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+<style type="text/css">
+*{
+margin:0;
+padding: 0;
+}
+html{
+	font-size: 20px;
+}
+body{
+position: absolute;
+width: 100%;
+height: 100%;
+position: absolute;
+overflow: hidden;
+}
+.sider-bar{
+position: absolute;
+width: 20%;
+height: 100%;
+background: #f7f7f7;
+}
+.sider-bar ul li{
+text-align: center;
+display: block;
+font-size: .6rem;
+line-height: 2rem;
+white-space: nowrap;
+list-style: none;
+width: 100%;
+}
+.sider-bar ul li.cur{
+color:#e51a53;
+background: #fff;
+}
+.xs-container{
+height: 100%;
+}
+.xs-content{
+width: 100%;
+}
+.menu-container{
+width: 100%;
+height: 100%;
+background: #f7f7f7;
+}
+.ks-sider-menu-mask{
+  position: fixed;
+  top:0;
+  left:0;
+  right: 0;
+  bottom: 0;
+  background: #000;
+  opacity: 0.6;
+  display: none;
+}     
+</style>
+</head>
+<body>
+<!--start for docs 求求你别删我 注释内部的html代码会被自动提取成组件的示例html代码 script标签内部的为js示例代码， demo正常后，可在kimi.taobao.net/com.php#filter=km上查看 -->
+<div class="container">
+	<div class="sider-bar" id="J_SiderBar">
+   
+  </div>
+  <a style="font-size:100px;" href="http://www.baidu.com">Test</a>
+  <div id="mask"></div>
+</div>
+ <script type="text/javascript" src="http://g.tbcdn.cn/??kissy/k/1.4.8/seed-min.js"></script>
+	<script>
+		 KISSY.config({
+        packages: {
+            "kg":{
+                tag: "20140918",
+                base: "http://g.assets.daily.taobao.net/"
+            }
+        }
+    });
+    KISSY.use("kg/xmenu/1.0.0/",function(S,XMenu){		
+			 var catdata = [{
+                  text:"全部",
+                },
+                {
+                  text:"美食",
+                  children:[
+                    {
+                      text:"火锅"
+                    },
+                    {
+                      text:"自助餐"
+                    },
+                    {
+                      text:"甜点饮品"
+                    },
+                    {
+                      text:"西餐"
+                    },
+                    {
+                      text:"地方菜"
+                    },
+                    {
+                      text:"咖啡/茶楼"
+                    },
+                    {
+                      text:"烧烤"
+                    },
+                    {
+                      text:"小吃/快餐"
+                    },
+                    {
+                      text:"日本料理"
+                    },
+                    {
+                      text:"东南亚菜"
+                    },
+                     {
+                      text:"川菜"
+                    },
+                    {
+                      text:"本帮江浙菜"
+                    },
+                    {
+                      text:"海鲜"
+                    },
+                    {
+                      text:"新疆菜"
+                    },
+                    {
+                      text:"湘菜"
+                    },
+                    {
+                      text:"东北菜"
+                    },
+                    {
+                      text:"北京菜"
+                    },
+                    {
+                      text:"泰国菜"
+                    },
+                    {
+                      text:"印度菜"
+                    },
+                    {
+                      text:"韩国料理"
+                    },
+                    {
+                      text:"日本料理"
+                    },
+                    {
+                      text:"其他"
+                    },
+                    {
+                      text:"外卖"
+                    }
+                  ]
+                },
+                {
+                  text:"生鲜",
+                  children:[
+                    {
+                      text:"水果"
+                    },
+                    {
+                      text:"蔬菜花卉"
+                    },
+                    {
+                      text:"禽蛋肉"
+                    },
+                    {
+                      text:"水产"
+                    },
+                    {
+                      text:"食用油"
+                    },
+                    {
+                      text:"熟食"
+                    },
+                    {
+                      text:"米面杂粮"
+                    },
+                    {
+                      text:"特产干货"
+                    },
+                    {
+                      text:"黄酒啤酒"
+                    },
+                    {
+                      text:"牛奶"
+                    },
+                    {
+                      text:"调味品"
+                    }
+                  ]
+                },
+                {
+                  text:"电影"
+                },
+                {
+                  text:"结婚"
+                },
+                {
+                  text:"亲子"
+                },
+                {
+                  text:"旅游"
+                },
+                {
+                  text:"休闲"
+                },
+                {
+                  text:"酒店"
+                },
+                {
+                  text:"丽人"
+                },
+                {
+                  text:"教育"
+                },
+                {
+                  text:"其他"
+                }
+              ]
+
+
+          var menu = window.menu = new XMenu({
+            renderTo:"#J_SiderBar",
+            maskNode:"#mask",
+            renderHook:function(e){
+            	return e.text;
+            },
+            data:catdata
+          });
+
+          menu.render();
+
+          menu.on("switch",function(e){
+            console.log(e.data)
+          })
+
+		});
+	</script>
+
+<!--end for docs 求求你别删我 -->
+</body>
+</html>
+
+
